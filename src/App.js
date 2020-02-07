@@ -1,26 +1,12 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Student from "./Student";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <Student name="John" physics="75" chemistry="71" biology="78" />;
 }
 
+// to pass name, physics, chemistry & biology from App component to student component and render name, physics, chemistry and biology in browser
+// specify them as attribute
+// specify name property, add name attribute, and assign value John
 export default App;
