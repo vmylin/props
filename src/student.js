@@ -43,20 +43,25 @@
 
 //========================
 
-// COMBINING JS & PROPS TO RENDER CONTENT
+// // COMBINING JS & PROPS TO RENDER CONTENT
 
-// component can use JS if/else statement 
-// render different content based on different conditions
+// // component can use JS if/else statement 
+// // render different content based on different conditions
 
-import React from "react";
+// import React from "react";
 
-export function Student(props) {
-    if(props.physics > 60 && props.chemistry > 60 && props.biology > 60) {
-        return <h2>Grade A</h2>;
+// export function Student(props) {
+//     if(props.physics > 60 && props.chemistry > 60 && props.biology > 60) {
+//         return <h2>Grade A</h2>;
         
-    } else {
-        return <h2>Grade B</h2>
-    }
-}
+//     } else {
+//         return <h2>Grade B</h2>
+//     }
+// }
 
-export default Student;
+// export default Student;
+
+//========================
+
+// RENDER ARRAY IN CHILD COMPONENT USING FOR LOOP
+
