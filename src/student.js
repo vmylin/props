@@ -53,7 +53,7 @@
 // export function Student(props) {
 //     if(props.physics > 60 && props.chemistry > 60 && props.biology > 60) {
 //         return <h2>Grade A</h2>;
-        
+
 //     } else {
 //         return <h2>Grade B</h2>
 //     }
@@ -65,18 +65,37 @@
 
 // RENDER ARRAY IN CHILD COMPONENT USING FOR LOOP
 
+// import React from "react";
+
+// function marksList(marks) {
+//     let arrayElems= [];
+//     for(let i=0;i<marks.length;i++) {
+//         arrayElems.push(<li>{`${mark[i]}`}</li>)
+//         // marksList function uses JS for loop to list all items and put them in <li> 
+//     }
+//     return arrayElems;
+// }
+
+// export function Student(props) {
+//     return <ul>{marksList(props.marks)}</ul>;
+// }
+// export default Student
+
+//======================
+
+// RENDERING AN ARRAY IN CHILD COMPONENT USING MAP METHOD
+
 import React from "react";
 
-function marksList(marks) {
-    let arrayElems= [];
-    for(let i=0;i<marks.length;i++) {
-        arrayElems.push(<li>{`${mark[i]}`}</li>)
-        // marksList function uses JS for loop to list all items and put them in <li> 
-    }
-    return arrayElems;
+export function Student(props) {
+    return (
+        <ul>
+            {props.marks.map(mark => (
+                // use map method to transform objects in an array into HTML elements
+                <li key={mark}>{`${mark}`}</li>
+            ))}
+        </ul>
+    );
 }
 
-export function Student(props) {
-    return <ul>{marksList(props.marks)}</ul>;
-}
-export default Student
+export default Student;
