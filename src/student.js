@@ -2,7 +2,8 @@ import React from "react"
 
 export function Student(props) {
     // first add a parameter to function component
-    // parameter can be anything
+    // parameter can be anything (but convention is to name props)
+    // to receive value, it has to be props.(value) | it's like jQuery API
     return(
         <div>
             <h1>{props.name}</h1>
