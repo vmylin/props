@@ -85,17 +85,36 @@
 
 // RENDERING AN ARRAY IN CHILD COMPONENT USING MAP METHOD
 
+// import React from "react";
+
+// export function Student(props) {
+//     return (
+//         <ul>
+//             {props.marks.map(mark => (
+//                 // use map method to transform objects in an array into HTML elements
+//                 <li key={mark}>{`${mark}`}</li>
+//             ))}
+//         </ul>
+//     );
+// }
+
+// export default Student;
+
+//===================
+
+//  RENDER UNKNOWN CONTENT
+
 import React from "react";
 
 export function Student(props) {
     return (
-        <ul>
-            {props.marks.map(mark => (
-                // use map method to transform objects in an array into HTML elements
-                <li key={mark}>{`${mark}`}</li>
-            ))}
-        </ul>
+        <div>
+            <h1>{props.name}</h1>
+            <p>{props.children}</p>
+        </div>
     );
 }
 
+// want to render unknown content
+// retrieve using reserved children property in props object.
 export default Student;
