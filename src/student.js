@@ -65,3 +65,18 @@
 
 // RENDER ARRAY IN CHILD COMPONENT USING FOR LOOP
 
+import React from "react";
+
+function marksList(marks) {
+    let arrayElems= [];
+    for(let i=0;i<marks.length;i++) {
+        arrayElems.push(<li>{`${mark[i]}`}</li>)
+        // marksList function uses JS for loop to list all items and put them in <li> 
+    }
+    return arrayElems;
+}
+
+export function Student(props) {
+    return <ul>{marksList(props.marks)}</ul>;
+}
+export default Student
