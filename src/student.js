@@ -104,17 +104,34 @@
 
 //  RENDER UNKNOWN CONTENT
 
+// import React from "react";
+
+// export function Student(props) {
+//     return (
+//         <div>
+//             <h1>{props.name}</h1>
+//             <p>{props.children}</p>
+//         </div>
+//     );
+// }
+
+// // want to render unknown content
+// // retrieve using reserved children property in props object.
+// export default Student;
+
 import React from "react";
 
 export function Student(props) {
-    return (
-        <div>
-            <h1>{props.name}</h1>
-            <p>{props.children}</p>
-        </div>
-    );
+    return(
+        <React.Fragment>
+            <span>{props.name}</span>
+            <span>
+                <button onClick={() => props.userCallback(props.name)}>
+                    Click Here
+                </button>
+            </span>
+        </React.Fragment>
+    )
 }
-
-// want to render unknown content
-// retrieve using reserved children property in props object.
-export default Student;
+// userName function is provided to Student component as value for a prop named userCallback
+// onClick expression is arrow function that calls function prop when it is invoked
