@@ -44,27 +44,50 @@
 // // specify content between opening & closing tag of parent component
 // export default App;
 
+// import React from "react";
+// import Student from "./Student";
+// import ReactDOM from "react-dom";
+
+// var names = ['John', 'Alice', 'Mark'];
+
+// function userName(name) {
+//   names = names.filter(item => item !== name)
+//   ReactDOM.render(<App />, document.getElementById("root"));
+// }
+// // function userName used js method to remove item from array
+// // parent component provides a child with a function
+
+// export default function App() {
+//   return (
+//     <ul>
+//       {names.map((name, index) => (
+//         <li key={name}>
+//           <Student index={index} name={name} userCallback={username} />
+//         </li>
+//       ))}
+//     </ul>
+//   )
+// }
+
+//===================
+
+// PASSING PROPS WITH SPREAD
+
 import React from "react";
 import Student from "./Student";
-import ReactDOM from "react-dom";
+import "./App.css";
 
-var names = ['John', 'Alice', 'Mark'];
+// performance reasons, avoid passing props down through too many layers of components
+// some instances pass all props to a child. JS spread operator to help with this
 
-function userName(name) {
-  names = names.filter(item => item !== name)
-  ReactDOM.render(<App />, document.getElementById("root"));
+function App() {
+  return(
+    <div>
+      <Student name="Matthew" physics="45" chemistry="49" biology="53" />
+      <Student name="John" physics="75" chemistry="71" biology="78" />
+      <Student name="Robin" physics="95" chemistry="91" biology="88" />
+    </div>
+  );
 }
-// function userName used js method to remove item from array
-// parent component provides a child with a function
 
-export default function App() {
-  return (
-    <ul>
-      {names.map((name, index) => (
-        <li key={name}>
-          <Student index={index} name={name} userCallback={username} />
-        </li>
-      ))}
-    </ul>
-  )
-}
+export default App;

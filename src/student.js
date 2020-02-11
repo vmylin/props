@@ -119,19 +119,38 @@
 // // retrieve using reserved children property in props object.
 // export default Student;
 
+// import React from "react";
+
+// export function Student(props) {
+//     return(
+//         <React.Fragment>
+//             <span>{props.name}</span>
+//             <span>
+//                 <button onClick={() => props.userCallback(props.name)}>
+//                     Click Here
+//                 </button>
+//             </span>
+//         </React.Fragment>
+//     )
+// }
+// // userName function is provided to Student component as value for a prop named userCallback
+// // onClick expression is arrow function that calls function prop when it is invoked
+
+//===================
+
+// PASSING PROPS WITH SPREAD
+
 import React from "react";
+import Marks from "./Marks";
 
 export function Student(props) {
-    return(
-        <React.Fragment>
-            <span>{props.name}</span>
-            <span>
-                <button onClick={() => props.userCallback(props.name)}>
-                    Click Here
-                </button>
-            </span>
-        </React.Fragment>
-    )
+    return (
+        <div>
+            <h1>{props.name}</h1>
+            <Marks {...props} />
+        </div>
+    );
 }
-// userName function is provided to Student component as value for a prop named userCallback
-// onClick expression is arrow function that calls function prop when it is invoked
+
+export default Student;
+// the {...props} expression passes on all of props received from parent component.
